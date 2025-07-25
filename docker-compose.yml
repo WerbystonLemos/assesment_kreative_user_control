@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: kreative_monolito_app
+    volumes:
+      - ./assesment_kreative_user_control:/var/www/html
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+    networks:
+      - kreative_net
+
+  db:
+    image: mysql:5.7
+    container_name: kreative_monolito_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: kreative
+    ports:
+      - "3316:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - kreative_net
+
+networks:
+  kreative_net:
+
+volumes:
+  dbdata:
