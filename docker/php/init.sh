@@ -1,4 +1,9 @@
+#!/bin/sh
+
 cd /var/www/html
+
+chmod +x assesment_kreative_user_control/init.sh
+
 
 if [ ! -f ".env" ]; then
   cp .env.example .env
@@ -8,6 +13,8 @@ fi
 if ! grep -q "APP_KEY=" .env || grep -q "APP_KEY=" .env | grep -q "base64:"; then
   php artisan key:generate
 fi
+
+php artisan key:generate
 
 # Roda as migrations (pode pular se já tiver rodado)
 php artisan migrate --force
