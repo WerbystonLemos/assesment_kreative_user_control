@@ -11,7 +11,7 @@
         <div class="col-md-12">
 
             <div>
-                <button class="btn btn-sm btn-success">
+                <button class="btn btn-sm btn-success" onclick="showFormAddUser()">
                     <i class="bi bi-plus-circle"></i>
                     Adicionar Usuário
                 </button>
@@ -58,5 +58,6 @@
 {{-- Modal edit --}}
 @include('components.home.modal_edit')
 @include('components.home.modal_delete')
+@include('components.home.modal_add')
 
 @endsection

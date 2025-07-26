@@ -38,3 +38,13 @@ function deleteUser()
     //     success: ()
     // })
 }
+
+function showFormAddUser()
+{
+    $("#home_modal_add").modal('show')
+}
+
+function addUser()
+{
+    alert("A salvar")
+}
