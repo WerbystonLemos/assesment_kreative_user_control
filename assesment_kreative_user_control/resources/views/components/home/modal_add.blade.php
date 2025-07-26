@@ -13,15 +13,15 @@
             <div class="modal-body">
 
                 <form>
-                    <div class="">
+                    <div>
                         <label for="input_form_add_user_nome" class="form-label">Nome</label>
-                        <input type="email" class="form-control" id="input_form_add_user_nome" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="input_form_add_user_nome">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="input_form_add_user_email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="input_form_add_user_email" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="input_form_add_user_email">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="input_form_add_user_Password" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="input_form_add_user_Password">
                     </div>
@@ -30,8 +30,8 @@
                         <label class="form-check-label" for="exampleCheck1">Ativado</label>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" onclick="addUser()">Salvar</button>
-                        <button type="submit" class="btn btn-primary" onclick="closeModal('home_modal_add')">Cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="addUser()">Salvar</button>
+                        <button type="button" class="btn btn-primary" onclick="closeModal('home_modal_add')">Cancelar</button>
                     </div>
                 </form>
 

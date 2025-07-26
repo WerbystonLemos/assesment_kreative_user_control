@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -55,6 +56,30 @@ class UserController extends Controller
             $user->status   = $status;
         }
 
+        $user->save();
+    }
+
+    public function store(Request $request)
+    {
+        $status = ($request->status == 'true') ? 'ativado' : 'desativado';
+        $request->validate([
+            'name'  => 'required|string|min:2',
+            'email' => 'required|string',
+            'senha' => 'string|min:8|required',
+        ],[
+            'name.required' => 'Campo obrigatório',
+            'name.string'   => 'Campo com caracteres inválido',
+            'name.min'      => 'Mínimo de 3 letras exigidas',
+            'email.required'=> 'Email obrigatório',
+            'senha.required'=> 'Senha obrigatória e com o mínimo de 8 dígitos',
+            'senha.min'     => 'Senha obrigatória e com o mínimo de 8 dígitos',
+        ]);
+
+        $user = new User();
+        $user->name     = $request->name;
+        $user->email    = $request->email;
+        $user->password = Hash::make($request->senha);
+        $user->status   = $status;
         $user->save();
     }
 }

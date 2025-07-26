@@ -138,5 +138,36 @@ function showFormAddUser()
 
 function addUser()
 {
-    alert("A salvar")
+    showLoading()
+    let nome    = $("#input_form_add_user_nome").val()
+    let email   = $("#input_form_add_user_email").val()
+    let senha   = $("#input_form_add_user_Password").val()
+    let status  = $("#input_form_add_user_status").prop("checked")
+
+    $.ajax({
+        url: '/user',
+        data: {
+            'name': nome,
+            'email': email,
+            'senha': senha,
+            'status': status,
+        },
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: (res) => {
+            hideLoading()
+            closeModal('home_modal_add')
+            Swal.fire({
+                title: "Sucesso!",
+                text: "Usuário adicionado com sucesso!",
+                showCancelButton: false,
+                confirmButtonColor: '#168751',
+                confirmButtonText: 'OK'
+            })
+            location.reload()
+        },
+        error: (err) => console.log(err),
+    })
 }
