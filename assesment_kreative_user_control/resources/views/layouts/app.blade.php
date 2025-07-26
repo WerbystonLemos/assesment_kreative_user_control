@@ -30,10 +30,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm container-header">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <strong>UserControl</strong>
+                    <img id="imgLogo" src="{{ asset('images/logo.png') }}" alt="UserControl">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

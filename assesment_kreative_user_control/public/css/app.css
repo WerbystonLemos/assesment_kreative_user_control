@@ -11975,3 +11975,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+#imgLogo
+{
+    height: 50px;
+}
