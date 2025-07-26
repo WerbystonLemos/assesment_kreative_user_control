@@ -1,0 +1,16 @@
+.modal-header
+{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#home_modal_btn_close
+{
+    color: #000;
+}
+.modal-body form div
+{
+    margin-bottom: 15px;
+}

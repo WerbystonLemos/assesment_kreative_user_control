@@ -30,7 +30,6 @@
     {
         width: 100vw;
         height:100vh;
-        border: 1px solid red;
         display:none;
         align-items:center;
         justify-content:center;
