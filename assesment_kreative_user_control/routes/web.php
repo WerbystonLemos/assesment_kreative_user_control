@@ -10,11 +10,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'login'])->name('login');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
 
 Route::middleware(['auth'])->group( function () {
     // HOME
-    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'home']);
     // USERS
     Route::get('/user/{id}', [UserController::class, 'getUser']);
 });
