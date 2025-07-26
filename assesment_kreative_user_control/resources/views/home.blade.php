@@ -4,7 +4,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/home/main.css')}}?{{rand()}}"/>
 
 @extends('loading')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">

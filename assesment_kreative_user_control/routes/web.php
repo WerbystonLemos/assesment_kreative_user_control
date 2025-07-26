@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
 
-Route::middleware(['auth'])->group( function () {
+Route::middleware(['auth', 'check.status'])->group( function () {
     // HOME
     Route::get('/home', [HomeController::class, 'home']);
     // USERS
