@@ -35,4 +35,26 @@ class UserController extends Controller
         }
         return User::destroy($id);
     }
+
+    public function update(Request $request, $id)
+    {
+        $status = ($request->status == 'true') ? 'ativado' : 'desativado';
+        $request->validate([
+            'name' => 'required|string|min:2',
+        ],[
+            'name.required' => 'Campo obrigatório',
+            'name.string'   => 'Campo com caracteres inválido',
+            'name.min'      => 'Mínimo de 3 letras exigidas'
+        ]);
+
+        $user = User::find($id);
+
+        if($user)
+        {
+            $user->name     = $request->name;
+            $user->status   = $status;
+        }
+
+        $user->save();
+    }
 }

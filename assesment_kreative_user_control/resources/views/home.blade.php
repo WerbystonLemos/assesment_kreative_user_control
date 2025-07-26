@@ -25,8 +25,8 @@
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Email</th>
-                            <th>Status</th>
-                            <th>Ações</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,9 +35,15 @@
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td>{{$user->status}}</td>
-                                <td>
-                                    <button class='btn btn-sm btn-warning' title="Editar" onclick="editaUsuario({{$user->id}})">
+                                <td class="text-center">
+                                    @if($user->status == 'ativado')
+                                        <i class="bi bi-check-lg text-success"></i>
+                                    @elseif($user->status == 'desativado')
+                                        <i class="bi bi-ban text-danger"></i>
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    <button class='btn btn-sm btn-warning' title="Editar" onclick="showEditaUsuario({{$user->id}})">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
                                     <button class='btn btn-sm btn-danger' title="Deletar" onclick="showDeleteUsuario({{$user->id}})">

@@ -13,16 +13,18 @@
         <div class="modal-body">
 
             <form>
+                <input id="inputId_modal_edit" type="hidden" value="">
                 <div class="form-group">
                     <label for="inputName_modal_edit">Nome</label>
-                    <input type="email" class="form-control" id="inputName_modal_edit" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="text" class="form-control" id="inputName_modal_edit" aria-describedby="emailHelp" placeholder="Digite nome" @required(true)>
+                    <small id="erro_name" class="alert_error"></small>
                 </div>
                 <div class="form-check">
                     <label for="inputStatus_modal_edit" class="form-check-label">Ativo</label>
-                    <input type="checkbox" class="form-check-input" id="inputStatus_modal_edit" placeholder="Password">
+                    <input type="checkbox" class="form-check-input" id="inputStatus_modal_edit">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-success" onclick="editUser()">Salvar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal('home_modal_edit')">Cancelar</button>
                 </div>
             </form>
