@@ -21,3 +21,20 @@ function closeModal(tagId)
 {
     $(`#${tagId}`).modal('hide')
 }
+
+function showDeleteUsuario(idUser)
+{
+    $("#home_modal_delete").modal('show')
+    $("#input_id_user_modal_delete").val(idUser)
+}
+
+function deleteUser()
+{
+    let idUserToDelete = $("#input_id_user_modal_delete").val()
+    alert(`Deletando user de id: ${idUserToDelete}`)
+    // $.ajax({
+    //     url: `user/${id}`,
+    //     type: 'DELETE',
+    //     success: ()
+    // })
+}

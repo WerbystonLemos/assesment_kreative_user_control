@@ -3,17 +3,21 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Deletar usuário</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('home_modal_delete')">
-          <span aria-hidden="true"><i class="bi bi-x-lg"></i></span>
+        <h5 class="modal-title" id="exampleModalLongTitle">
+            <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+            Deletar usuário
+        </h5>
+        <button type="button" class="close btn btn-sm btn-link" data-dismiss="modal" aria-label="Close" onclick="closeModal('home_modal_delete')">
+            <span aria-hidden="true" class="home_modal_btn_close"><i class="bi bi-x-lg"></i></span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <input id="input_id_user_modal_delete" type="hidden" val="">
+        Tem certeza que desejas <b class="text-danger">DELETAR</b> o usuário?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal('home_modal_delete')">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-success" onclick="deleteUser()">Sim</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal('home_modal_delete')">Não</button>
       </div>
     </div>
   </div>

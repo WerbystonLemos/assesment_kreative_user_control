@@ -5,8 +5,8 @@
 
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Editar usuário</h5>
-            <button id="home_modal_btn_close" type="button" class="close btn btn-sm btn-link" data-dismiss="modal" aria-label="Close" onclick="closeModal('home_modal_edit')">
-                <span aria-hidden="true"><i class="bi bi-x-lg"></i></span>
+            <button type="button" class="close btn btn-sm btn-link" data-dismiss="modal" aria-label="Close" onclick="closeModal('home_modal_edit')">
+                <span aria-hidden="true" class="home_modal_btn_close"><i class="bi bi-x-lg"></i></span>
             </button>
         </div>
 
