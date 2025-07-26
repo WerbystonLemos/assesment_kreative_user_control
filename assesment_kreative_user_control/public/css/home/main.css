@@ -16,5 +16,20 @@
     margin-bottom: 15px;
 }
 
-/* MODAL DELETE */
-/* #home_modal_delete */
+#btnAddUser
+{
+    background: #0067b7;
+    color: #fff;
+}
+
+#btnEditUser
+{
+    background: #4993da;
+    color: #fff;
+}
+
+#btnDeleteUser
+{
+    background: #0067b7;
+    color: #fff;
+}

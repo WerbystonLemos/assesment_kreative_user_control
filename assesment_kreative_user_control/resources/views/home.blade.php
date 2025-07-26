@@ -11,7 +11,7 @@
         <div class="col-md-12">
 
             <div>
-                <button class="btn btn-sm btn-success" onclick="showFormAddUser()">
+                <button id="btnAddUser" class="btn btn-md btn-info" onclick="showFormAddUser()">
                     <i class="bi bi-plus-circle"></i>
                     Adicionar Usuário
                 </button>
@@ -43,10 +43,10 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    <button class='btn btn-sm btn-warning' title="Editar" onclick="showEditaUsuario({{$user->id}})">
+                                    <button id="btnEditUser" class='btn btn-sm' title="Editar" onclick="showEditaUsuario({{$user->id}})">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-                                    <button class='btn btn-sm btn-danger' title="Deletar" onclick="showDeleteUsuario({{$user->id}})">
+                                    <button id="btnDeleteUser" class='btn btn-sm' title="Deletar" onclick="showDeleteUsuario({{$user->id}})">
                                         <i class="bi bi-trash3-fill"></i>
                                     </button>
                                 </td>
