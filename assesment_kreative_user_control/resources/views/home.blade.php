@@ -2,6 +2,8 @@
 
 <script src="{{ asset('js/home/main.js')}}?{{rand()}}"></script>
 
+@extends('loading')
+
 @section('content')
 <div class="container-fluid" style="border: 1px solid red">
     <div class="row justify-content-center">
