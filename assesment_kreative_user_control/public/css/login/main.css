@@ -1,0 +1,45 @@
+#header_container
+{
+    display: none;
+}
+#app
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#app
+{
+    background: #0067b7;
+}
+#container_form_login
+{
+    min-width: 50vw;
+    max-width: 80vw;
+}
+input, .inputs
+{
+    width: 100%;
+}
+#container_actions
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#container_actions > button
+{
+    background: #0067b7;
+}
+#img_logo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#img_logo > img
+{
+    width: 50%
+}

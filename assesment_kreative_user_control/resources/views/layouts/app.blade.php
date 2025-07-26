@@ -33,7 +33,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm container-header">
+        <nav id="header_container" class="navbar navbar-expand-md navbar-light bg-white shadow-sm container-header">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img id="imgLogo" src="{{ asset('images/logo.png') }}" alt="UserControl">
