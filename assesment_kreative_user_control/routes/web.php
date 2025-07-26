@@ -17,4 +17,5 @@ Route::middleware(['auth'])->group( function () {
     Route::get('/home', [HomeController::class, 'home']);
     // USERS
     Route::get('/user/{id}', [UserController::class, 'getUser']);
+    Route::delete('/user/{id}', [UserController::class, 'deleteUser']);
 });

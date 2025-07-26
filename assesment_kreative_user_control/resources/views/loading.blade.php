@@ -14,9 +14,10 @@
 --}}
 
 <script>
-    function showLoading()
+    function showLoading(text='Carregando')
     {
         $("#contianer_loading").css('display', 'flex');
+        $("#contianer_loading>h2").html(text);
     }
 
     function hideLoading()

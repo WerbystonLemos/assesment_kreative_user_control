@@ -30,13 +30,59 @@ function showDeleteUsuario(idUser)
 
 function deleteUser()
 {
+    showLoading("Deletando. Aguarde!")
     let idUserToDelete = $("#input_id_user_modal_delete").val()
-    alert(`Deletando user de id: ${idUserToDelete}`)
-    // $.ajax({
-    //     url: `user/${id}`,
-    //     type: 'DELETE',
-    //     success: ()
-    // })
+    $.ajax({
+        url: `user/${idUserToDelete}`,
+        type: 'DELETE',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: res => {
+            let title = ''
+            let msg = ''
+            let icon = ''
+
+            if(res)
+            {
+                title = "Sucesso"
+                msg = "Deletado com sucesso!"
+                icon = 'Success'
+            }
+            else
+                {
+                title = "Erro"
+                msg = "Erro ao Deletar!"
+                icon = 'warning'
+
+            }
+
+            Swal.fire({
+                title: title,
+                text: msg,
+                icon: icon,
+                showCancelButton: false,
+                confirmButtonColor: '#168751',
+                confirmButtonText: 'OK'
+            })
+        },
+        error: err => {
+            Swal.fire({
+                title: 'Erro',
+                text: "Erro ao deletar usuário.",
+                icon: "Warning",
+                showCancelButton: false,
+                confirmButtonColor: '#e63047',
+                confirmButtonText: 'OK'
+            })
+            console.log(`Erro: ${err}`)
+        },
+        complete: () => {
+            closeModal('home_modal_delete')
+            hideLoading()
+            location.reload()
+        }
+    })
 }
 
 function showFormAddUser()
